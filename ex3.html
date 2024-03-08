@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula 1 </title>
+</head>
+
+<body>
+    <script>
+        function factoração(num) {
+            if (num === 0 || num === 1)
+                return 1;
+            else {
+
+                for (var i = num - 1; i >= 1; i--) {
+                    num *= i;
+                }
+                return num;
+            }
+        }
+
+        let num = prompt(" Digite um número ");
+        alert(" O numero fatorial é " + factoração(num));
+
+    </script>
+    <button> <a href="../exercicios1.html"> RETURN </a></button>
+</body>
+
+</html>

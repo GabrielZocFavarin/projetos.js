@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numero = prompt(" Digite um numero", "");
+        var divisores = 0;
+        if (isNaN(numero) || isInteger(numero) == false) {
+            alert("Valor inválido!");
+        }
+        else {
+            for (var count = 1; count <= numero; count++)
+                if (numero % count == 0)
+                    divisores++;
+
+            if (divisores == 2) {
+                alert("É primo");
+            }
+            else {
+                alert("Não é primo");
+            }
+        }
+    </script>
+   <button> <a href="../exercicios1.html"> RETURN </a></button>
+</body>
+
+</html>

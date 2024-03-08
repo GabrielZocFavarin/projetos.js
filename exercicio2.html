@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exericio 2 -> </title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="nome"> Digite o seu nome! :] </label>
+        <input type="text" id="nome" required>
+        <!-- <input type="submit" onclick="AdicionarValor()"> -->
+        <button type="submit" onclick="AdicionarValor()"> >>>>>> </button>
+    </form>
+
+    <h2> LISTAGEM DOS NOMES EM ORDEM ALFABÉTICA: </h2>
+    <div id="ListaRetorno">
+        <!-- <p id="ListaRetorno"></p> -->
+    </div>
+
+
+    <script>
+        let nomes = [];
+
+        function AdicionarValor() {
+
+            var var_nomes = document.getElementById("nome");
+            var nome = var_nomes.value.trim();
+            // var correcao = var_nomes.values.trim();
+
+            if (nome !== "") {
+                nomes.push(nome);
+                nomes.sort();
+                Exibir();
+                var_nomes.value = "";
+            }
+
+            
+        }
+
+        function Exibir(){
+            let ListaRetorno = document.getElementById("ListaRetorno");
+            let ListaNomes = nomes.join(", ");
+            ListaRetorno.textContent = ListaNomes;
+        }
+    </script>
+    
+</body>
+</html>
