@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Atividade 3 - Semana 3</title>
+  </head>
+  <body>
+    <script>
+     
+      function limparFrase(frase) {
+        return frase.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+      }
+
+      
+      function verificarPalindromo(frase) {
+        const fraseLimpa = limparFrase(frase);
+        const fraseReversa = fraseLimpa.split("").reverse().join("");
+        return fraseLimpa === fraseReversa;
+      }
+
+      
+      const frase = prompt("Digite uma frase:");
+
+      
+      if (verificarPalindromo(frase)) {
+        console.log("A frase é um palíndromo : " + frase);
+      } else {
+        console.log("A frase não é um palíndromo :" + frase);
+      }
+    </script>
+    <button> <a href="exercicio3.html"> RETURN </a></button>
+  </body>
+</html>
