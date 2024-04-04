@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV01-5</title>
+</head>
+<body>
+    <div id="geral"></div>
+    <script>
+        let contadorH = 0;
+        let contadorM = 0;
+
+        // document.getElementById("positivoH").addEventListener("click", function() {
+        //   contadorH++;
+        //   document.getElementById("contadorH").innerHTML = contadorH;
+        // });
+
+        // document.getElementById("negativoH").addEventListener("click", function() {
+        //   if (contadorH > 0) {
+        //     contadorH--;
+        //   }
+        //   document.getElementById("contadorH").innerHTML = contadorH;
+        // });
+
+        // document.getElementById("positivoM").addEventListener("click", function() {
+        //   contadorM++;
+        //   document.getElementById("contadorM").innerHTML = contadorM;
+        // });
+
+        // document.getElementById("negativoM").addEventListener("click", function() {
+        //   if (contadorM > 0) {
+        //     contadorM--;
+        //   }
+        //   document.getElementById("contadorM").innerHTML = contadorM;
+        // });
+
+
+
+        let div = document.getElementById("geral");
+        div.style.display = "flex";
+        div.style.flexDirection = "row"
+        div.style.height = "500px";
+        div.style.width = "100%";
+        div.style.padding = "0px";
+        div.style.margin = "0px";
+        div.style.justifyContent = 'space-around ';
+        div.style.alignContent = 'center'
+        div.style.border = "solid black 2px";
+        div.style.boxSizing = "border-box";
+
+        let div_geralM = document.createElement("div");
+        div_geralM.style.display = "flex";
+        div_geralM.style.flexDirection = "column"
+        div_geralM.style.border = "solid pink 3px";
+        div_geralM.style.alignContent = "center";
+        div_geralM.style.justifyContent = 'center';
+        div.appendChild(div_geralM);
+
+        let div_geral_h = document.createElement("div");
+        div_geral_h.style.display = "flex";
+        div_geral_h.style.flexDirection = "column"
+        div_geral_h.style.border = "solid  red 3px";
+        div_geral_h.style.alignContent = "center";
+        div_geral_h.style.justifyContent = 'center';
+        div.appendChild(div_geral_h);
+
+        let h1H = document.createElement("h1");
+        h1H.style.display = "flex";
+        h1H.style.justifyContent = "center";
+        h1H.innerHTML = "Total";
+        div_geral_h.appendChild(h1H);
+
+        let h1M = document.createElement("h1");
+        h1M.style.display = "flex";
+        h1M.style.justifyContent = "center";
+        h1M.innerHTML = "Total";
+        div_geralM.appendChild(h1M);
+
+
+        let reloadH = document.createElement("img");
+        reloadH.src = "homem.jpg"
+        div_geral_h.appendChild(reloadH);
+
+        let reloadM = document.createElement("img");
+        reloadM.src = "mulher.png"
+        div_geralM.appendChild(reloadM);
+
+        let div_homem = document.createElement("div");
+        div_homem.style.display = 'flex';
+        div_homem.style.flexDirection = 'column';
+        div_geral_h.appendChild(div_homem);
+
+        let div_mulher = document.createElement("div");
+        div_mulher.style.display = 'flex';
+        div_mulher.style.flexDirection = 'column';
+        div_geralM.appendChild(div_mulher);
+
+        let p1H = document.createElement("h1");
+        p1H.style.display = "flex";
+        p1H.style.justifyContent = "center";
+        p1H.innerHTML = "Homem";
+        div_homem.appendChild(p1H);
+
+        let p1M = document.createElement("h1");
+        p1M.style.display = "flex";
+        p1M.style.justifyContent = "center";
+        p1M.innerHTML = "Mulher";
+        div_mulher.appendChild(p1M)
+
+        let div_homem_homem = document.createElement("div");
+        div_homem_homem.style.display = 'flex';
+        div_homem_homem.style.flexDirection = 'row';
+        div_homem_homem.style.justifyContent = 'space-around';
+        div_homem_homem.style.alignItems = 'center'
+        div_homem.appendChild(div_homem_homem);
+
+        let div_mulher_mulher = document.createElement("div");
+        div_mulher_mulher.style.display = 'flex';
+        div_mulher_mulher.style.flexDirection = 'row';
+        div_mulher_mulher.style.justifyContent = 'space-around';
+        div_mulher_mulher.style.alignItems = 'center'
+        div_mulher.appendChild(div_mulher_mulher);
+
+
+        let botao_positivo_homem = document.createElement('input')
+        div_homem_homem.appendChild(botao_positivo_homem)
+        botao_positivo_homem.setAttribute('type', 'button')
+        botao_positivo_homem.setAttribute('value', '+')
+        botao_positivo_homem.setAttribute('id', 'positivoH')
+
+
+        let botao_positivo_mulher = document.createElement('input')
+        div_mulher_mulher.appendChild(botao_positivo_mulher)
+        botao_positivo_mulher.setAttribute('type', 'button')
+        botao_positivo_mulher.setAttribute('value', '+')
+        botao_positivo_mulher.setAttribute('id', 'positivoM')
+
+        let botao_negativo_homem = document.createElement('input')
+        div_homem_homem.appendChild(botao_negativo_homem)
+        botao_negativo_homem.setAttribute('type', 'button')
+        botao_negativo_homem.setAttribute('value', '-')
+        botao_negativo_homem.setAttribute('id', 'negativoH')
+
+        let botao_negativo_mulher = document.createElement('input')
+        div_mulher_mulher.appendChild(botao_negativo_mulher)
+        botao_negativo_mulher.setAttribute('type', 'button')
+        botao_negativo_mulher.setAttribute('value', '-')
+        botao_negativo_mulher.setAttribute('id', 'negativoM')
+
+        let div_homem_resultado = document.createElement("div");
+        div_homem_resultado.style.display = 'flex';
+        div_homem_resultado.style.flexDirection = 'row';
+        div_homem_resultado.style.justifyContent = 'center';
+        div_homem_resultado.style.alignItems = 'center';
+        div_homem_homem.appendChild(div_homem_resultado);
+
+
+        let div_mulher_resultado = document.createElement("div");
+        div_mulher_resultado.style.display = 'flex';
+        div_mulher_resultado.style.flexDirection = 'row';
+        div_mulher_resultado.style.justifyContent = 'center';
+        div_mulher_resultado.style.alignItems = 'center';
+        div_mulher_mulher.appendChild(div_mulher_resultado);
+
+        let homem_resultado = document.createElement("h3");
+        div_homem_resultado.appendChild(homem_resultado);
+        homem_resultado.innerHTML = exibirContadorHomem();
+        homem_resultado.setAttribute("id", "contadorresultadoH");
+
+        let mulher_resultado = document.createElement("h3");
+        div_mulher_resultado.appendChild(mulher_resultado);
+        mulher_resultado.innerHTML = exibirContadorMulher();
+        mulher_resultado.setAttribute("id", "contadorresultadoM");
+</script>
+<button> <a href="exercicio5.html"> RETURN </a></button>
+</body>
+</html>

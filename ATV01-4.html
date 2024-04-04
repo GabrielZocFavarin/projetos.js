@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="ATV01-4.css" type="text/css" />
+  </head>
+  <body>
+    <form id="formulario">
+      <h1>Formulário de Cadastro</h1>
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" placeholder="Digite seu Nome" />
+
+      <section id="top">
+        <div id="contato">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            autocomplete="additional-name"
+            placeholder="xxx@gmail.com"
+          />
+        </div>
+        <div id="contato">
+          <label for="dataNascimento">Data de Nascimento:</label>
+          <input type="date" id="dataNascimento" />
+        </div>
+      </section>
+
+      <section id="top">
+        <div id="contato">
+          <label for="telefoneFixo">Telefone Fixo:</label>
+          <input type="text" id="telefoneFixo" placeholder="(00)0000-0000" />
+        </div>
+        <div id="contato">
+          <label for="telefoneCelular">Telefone Celular:</label>
+          <input
+            type="text"
+            id="telefoneCelular"
+            placeholder="(00) 0 0000-0000"
+          />
+        </div>
+        <div id="selecao">
+          <div id="selecaoA">
+            <label for="tipoA">Aluno</label>
+            <input type="radio" id="tipoA" name="tipo" value="Aluno" />
+          </div>
+          <div id="selecaoP">
+            <label for="tipoP">Professor</label>
+            <input type="radio" id="tipoP" name="tipo" value="Professor" />
+          </div>
+        </div>
+      </section>
+      <div id="secAluno" style="display: none">
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" placeholder="Digite seu curso" />
+        <label for="matriculaA">Matrícula:</label>
+        <input type="text" id="matriculaA" placeholder="Digite sua matrícula" />
+      </div>
+
+      <div id="secProfessor" style="display: none">
+        <label for="especialidade">Área de Atuação:</label>
+        <input
+          type="text"
+          id="especialidade"
+          placeholder="Digite sua área de atuação"
+        />
+        <label for="lattes">Lattes:</label>
+        <input
+          type="text"
+          id="lattes"
+          placeholder="Digite o link do seu currículo Lattes"
+        />
+        <label for="matriculaP">Matrícula:</label>
+        <input type="text" id="matriculaP" placeholder="Digite sua matrícula" />
+      </div>
+
+      <br />
+      <button type="submit" value="Cadastrar">Enviar</button>
+      <button type="reset">Redefinir</button>
+    </form>
+    <table id="tabelaProfessor" style="display: none">
+      <caption>
+        <h1>Detalhes do Professor</h1>
+      </caption>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Data de Nascimento</th>
+          <th>Telefone Fixo</th>
+          <th>Telefone Celular</th>
+          <th>Área de Atuação</th>
+          <th>Matrícula</th>
+          <th>Lattes</th>
+        </tr>
+      </thead>
+      <tbody id="dadosProfessor"></tbody>
+    </table>
+
+    <table id="tabelaAluno" style="display: none">
+      <caption>
+        <h1>Detalhes do Aluno</h1>
+      </caption>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Data de Nascimento</th>
+          <th>Telefone Fixo</th>
+          <th>Telefone Celular</th>
+          <th>Curso</th>
+          <th>Matrícula</th>
+        </tr>
+      </thead>
+      <tbody id="dadosAluno"></tbody>
+    </table>
+
+    <button> <a href="exercicio4.html"> RETURN </a></button>
+
+    <script src="ATV01-4.js"></script>
+  </body>
+</html>
