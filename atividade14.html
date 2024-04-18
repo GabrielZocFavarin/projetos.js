@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="atividade14.css">
+<title>Formulário Moderno</title>
+
+</head>
+<body>
+
+<form id="myForm">
+    <h2> Formulário de Cadastro - Escola FAVATEC </h2>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    
+    <label for="telefone_fixo">Telefone Fixo:</label>
+    <input type="tel" id="telefone_fixo" name="telefone_fixo">
+    
+    <label for="telefone_celular">Telefone Celular:</label>
+    <input type="tel" id="telefone_celular" name="telefone_celular" required>
+
+    <label for="data_nascimento">Data de Nascimento:</label>
+    <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+    <label for="tipo">Professor/Aluno:</label>
+    <select id="tipo" name="tipo" onchange="MostraCampos()" required>
+        <option value="">Selecione...</option>
+        <option value="professor">Professor</option>
+        <option value="aluno">Aluno</option>
+    </select>
+
+    <div id="matriculacampo" class="hide">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula">
+    </div>
+
+    <div id="areacampo" class="hide">
+        <label for="area">Área de Atuação:</label>
+        <input type="text" id="area" name="area" >
+    </div>
+
+    <div id="lattescampo" class="hide">
+        <label for="lattes">Currículo Lattes:</label>
+        <input type="text" id="lattes" name="lattes">
+    </div>
+
+    <input type="submit" value="Enviar">
+</form>
+
+
+
+<script>
+    function MostraCampos() {
+        var tipo = document.getElementById("tipo").value;
+        var matriculacampo = document.getElementById("matriculacampo");
+        var areacampo = document.getElementById("areacampo");
+        var lattescampo = document.getElementById("lattescampo");
+
+        if (tipo === "professor") {
+            matriculacampo.classList.add("hide");
+            areacampo.classList.remove("hide");
+            lattescampo.classList.remove("hide");
+        } else if (tipo === "aluno") {
+            matriculacampo.classList.remove("hide");
+            areacampo.classList.add("hide");
+            lattescampo.classList.add("hide");
+        }
+    }
+
+    function Pessoa(nome, email, telefone_fixo, telefone_celular, data_nascimento, tipo) {
+        this.nome = document.getElementById("nome").value;
+        this.email = document.getElementById("email").value;
+        this.telefone_fixo = document.getElementById("telefone_fixo").value;
+        this.telefone_celular = document.getElementById("telefone_celular").value;
+        this.data_nascimento = document.getElementById("data_nascimento").value;
+        this.tipo = document.getElementById("tipo").value;
+
+        if (tipo === "aluno"){
+            
+        }
+    }
+
+
+
+
+
+
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .calculadora {
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        .tela {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+        .botao {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .botao:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculadora" id="calculadora"></div>
+
+<button> <a href="index.html"> RETURN </a></button>
+
+<script>
+
+    const calculadora = document.getElementById('calculadora');
+
+
+    const tela = document.createElement('div');
+    tela.classList.add('tela');
+    tela.textContent = '0';
+    calculadora.appendChild(tela);
+
+
+    const botoes = [
+        '7', '8', '9', '/',
+        '4', '5', '6', '*',
+        '1', '2', '3', '-',
+        '0', '.', '=', '+',
+        'AC'
+    ];
+
+    const botoesContainer = document.createElement('div');
+    botoesContainer.classList.add('botoes');
+    calculadora.appendChild(botoesContainer);
+
+    botoes.forEach(botao => {
+        const button = document.createElement('button');
+        button.classList.add('botao');
+        button.textContent = botao;
+        button.addEventListener('click', () => pressionarBotao(botao));
+        botoesContainer.appendChild(button);
+    });
+
+
+    let expressao = '';
+
+    function pressionarBotao(valor) {
+        if (valor === 'AC') {
+            expressao = '';
+            atualizarTela('0');
+        } else if (valor === '=') {
+            calcular();
+        } else {
+            expressao += valor;
+            atualizarTela(expressao);
+        }
+    }
+
+
+    function calcular() {
+        try {
+            const resultado = eval(expressao);
+            atualizarTela(resultado);
+            expressao = resultado.toString();
+        } catch (error) {
+            atualizarTela('Erro');
+        }
+    }
+
+    function atualizarTela(valor) {
+        tela.textContent = valor;
+    }
+</script>
+
+</body>
+</html>

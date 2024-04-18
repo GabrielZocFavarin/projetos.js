@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Pessoas</title>
+</head>
+
+<body>
+    <div id="contar"></div>
+
+    <button> <a href="index.html"> RETURN </a></button>
+
+    <script>
+        function atualizarContador() {
+            let div = document.getElementById("contar");
+            div.style.cssText = "display: flex; position: relative; margin: 0 auto; flex-direction:row; align-items: center; width: 100%";
+
+            let h1 = document.createElement("h1");
+            h1.innerHTML = "Total"
+            div.appendChild(h1);
+            div.style.fontFamily = "arial";
+            div.style.textAlign = "center";
+
+            let caixaTotal = document.createElement("span");
+            caixaTotal.textContent = "0";
+            caixaTotal.style.cssText = "border: 2px solid;padding: 5px 45px 5px 45px;"
+            div.appendChild(caixaTotal);
+
+            let resetar = document.createElement("img");
+            resetar.src = "reload.jpeg";
+            div.appendChild(resetar);
+            resetar.style.display = "flex";
+            resetar.style.position = "relative";
+            resetar.style.left = "64px";
+            resetar.style.top = "-88px";
+            resetar.style.width = "30px";
+
+          
+            resetar.addEventListener("click", () => {
+                contadorTotal = 0;
+                contadorMulher = 0;
+                contadorHomem = 0
+
+                contarTotalHomem.innerHTML = contadorHomem;
+                contarTotalMulher.innerHTML = contadorMulher;
+                caixaTotal.textContent = contadorTotal;
+            })
+
+          
+
+            let div_hm = document.createElement("div");
+            div.appendChild(div_hm);
+            div_hm.style.display = "flex";
+
+
+            let div_homem = document.createElement("div");
+            div_homem.innerHTML = "Homens"
+            div.appendChild(div_homem);
+            div_homem.style.display = "flex";
+            div_homem.style.flexDirection = "column"
+            div_homem.style.justifyContent = "center"
+            div_homem.style.alignItems = "center"
+
+            let imagem_homem = document.createElement("img");
+            imagem_homem.src = "imagem10.jpg"
+            div_homem.appendChild(imagem_homem);
+            imagem_homem.style.width = "150px"
+
+            let botao_mais_homem = document.createElement("input");
+            div_homem.appendChild(botao_mais_homem);
+            botao_mais_homem.setAttribute('type', 'button');
+            botao_mais_homem.setAttribute('value', '+');
+            botao_mais_homem.style.backgroundColor = "lightgreen";
+            botao_mais_homem.style.width = "30px"
+
+            let botao_menos_homem = document.createElement("input");
+            div_homem.appendChild(botao_menos_homem);
+            botao_menos_homem.setAttribute('type', 'button');
+            botao_menos_homem.setAttribute('value', '-');
+            botao_menos_homem.style.backgroundColor = "red";
+            botao_menos_homem.style.width = "30px"
+
+            let contadorHomem = 0
+            let contadorTotal = 0
+            botao_mais_homem.addEventListener("click", () => {
+                contadorHomem++;
+                contadorTotal++;
+                contarTotalHomem.textContent = contadorHomem;
+                caixaTotal.textContent = contadorTotal;
+            })
+
+            botao_menos_homem.addEventListener("click", () => {
+                if (contadorTotal > 0 && contadorHomem > 0) {
+                    contadorHomem--;
+                    contadorTotal--;
+                    contarTotalHomem.textContent = contadorHomem;
+                    caixaTotal.textContent = contadorTotal;
+                }
+            })
+
+            let contarTotalHomem = document.createElement("span");
+            contarTotalHomem.textContent = "0";
+            contarTotalHomem.style.cssText = "border: 2px solid;padding: 5px 45px 5px 45px;"
+            div_homem.appendChild(contarTotalHomem);
+
+     
+
+            let div_mulher = document.createElement("div");
+            div_mulher.innerHTML = "Mulheres"
+            div.appendChild(div_mulher);
+            div_mulher.style.display = "flex";
+            div_mulher.style.flexDirection = "column"
+            div_mulher.style.justifyContent = "center"
+            div_mulher.style.alignItems = "center"
+
+            let imagem_mulher = document.createElement("img");
+            imagem_mulher.src = "imagem11.png"
+            div_mulher.appendChild(imagem_mulher);
+            imagem_mulher.style.width = "150px"
+
+            let botao_mais_mulher = document.createElement("input");
+            div_mulher.appendChild(botao_mais_mulher);
+            botao_mais_mulher.setAttribute('type', 'button');
+            botao_mais_mulher.setAttribute('value', '+');
+            botao_mais_mulher.style.backgroundColor = "lightgreen";
+            botao_mais_mulher.style.width = "30px"
+
+            let botao_menos_mulher = document.createElement("input");
+            div_mulher.appendChild(botao_menos_mulher);
+            botao_menos_mulher.setAttribute('type', 'button');
+            botao_menos_mulher.setAttribute('value', '-');
+            botao_menos_mulher.style.backgroundColor = "red";
+            botao_menos_mulher.style.width = "30px";
+
+            let contadorMulher = 0
+            botao_mais_mulher.addEventListener("click", () => {
+                contadorMulher++;
+                contadorTotal++;
+                contarTotalMulher.textContent = contadorMulher;
+                caixaTotal.textContent = contadorTotal;
+            })
+
+            botao_menos_mulher.addEventListener("click", () => {
+                if (contadorTotal > 0 && contadorMulher > 0) {
+                    contadorMulher--;
+                    contadorTotal--;
+                    contarTotalMulher.textContent = contadorMulher;
+                    caixaTotal.textContent = contadorTotal;
+                }
+            })
+
+            let contarTotalMulher = document.createElement("span");
+            contarTotalMulher.textContent = "0";
+            contarTotalMulher.style.cssText = "border: 2px solid;padding: 5px 45px 5px 45px;"
+            div_mulher.appendChild(contarTotalMulher);
+        }
+        atualizarContador();
+    </script>
+    <br>
+    <a href="index.html">Voltar</a>
+</body>
+
+</html>
